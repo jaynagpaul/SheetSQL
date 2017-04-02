@@ -38,29 +38,31 @@ class Connection():
 
         :param title: title of spreadsheet to open, if multiple found opens first found
         :param url: url of spreadsheet to open
-        :param id: id of spreadsheet to open
+        :param key: id of spreadsheet to open
         >>> cur = conn.cursor()
         """
 
-        if title:
+        if title is not None:
             return cursor(self.api.open(title))
-        elif url:
+        elif url is not None:
             return cursor(self.api.open_by_url(url))
-        elif key:
+        elif key is not None:
             return cursor(self.api.open_by_key(key))
         else:
             raise TypeError("Must pass at least 1 argument: title, url, or id")
 
-    def create(self, title):
+    def create(self, title, email=None):
         """
         Initiates a new spreadsheet
+        Requires Google Drive API access
         TODO:
         Setup Schema
 
         :param title: title of spreadsheet to be created
+        :param email: (optional) email to share the spreadsheet to
         """
 
         spreadsheet = self.api.create(title)
+        if email is not None:
+            spreadsheet.share(email, perm_type='user', role='writer')
         setupschema(spreadsheet)
-    #Add more based off of psycopg2
-#@property will probably be useful

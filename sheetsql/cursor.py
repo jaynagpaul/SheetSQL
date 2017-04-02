@@ -8,6 +8,7 @@ This module contains the cursor class to the database connection.
 """
 
 
-def cursor(osod):
-    pass
+class cursor():
+    def __init__(self,sheet):
+        pass
     

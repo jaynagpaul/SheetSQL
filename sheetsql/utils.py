@@ -38,5 +38,9 @@ def setupschema(sheet):
     :param sheet: spreadsheet to convert to a SheetSQL db
     """
 
-    wkst = sheet.get_worksheet(0)
+    wkst = sheet.sheet1
     wkst.update_title('SheetSQL')
+    wkst.update_acell('A1', 'This worksheet holds all major settings for the DB. No Touching!')
+    wkst.update_acell('A2', 'Spreadsheet ID: {}'.format(sheet.id)) #Writes ID to CELL A2
+
+    

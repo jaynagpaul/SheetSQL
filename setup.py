@@ -6,7 +6,7 @@ setup(
     description="Google Sheets as a SQL Database",
     author="SpiesWithin",
     author_email="spieswithin@gmail.com",
-    url="https://github.com/SpiesWithin/SheetsDB",
+    url="https://github.com/SpiesWithin/SheetSQL",
     packages=["sheetsql"],
     install_requires=["gspread", "oauth2client"],
     setup_requires=["pytest-runner"],

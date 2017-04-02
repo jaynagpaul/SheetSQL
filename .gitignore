@@ -89,5 +89,9 @@ virtual/
 # Rope project settings
 .ropeproject
 
-#vscode
+#vscode settings
 .vscode/
+
+# Credentials used for testing
+creds.json 
+_test.py
