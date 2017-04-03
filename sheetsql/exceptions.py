@@ -12,3 +12,6 @@ class SheetSQLException(Exception):
 
 class InvalidSchema(SheetSQLException):
     """Spreadsheet had an invalid schema."""
+
+class InvalidQuery(SheetSQLException):
+    """The cursor has recieved an invalid sql query"""

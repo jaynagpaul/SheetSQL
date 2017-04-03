@@ -25,9 +25,9 @@ def signed_creds(path):
     except oauth2client.client.CryptoUnavailableError: #Used to bypass error in gspread
         import pip
         import site
-        from importlib import reload
+        from importlib import reload #`from imp import reload` < python3.3 | `` python2
         pip.main(['install', 'PyOpenSSL'])
-        reload(site)
+        reload(site) #Reloads the sys.path
         credentials = ServiceAccountCredentials.from_json_keyfile_name(path, scope)
     return credentials
 
@@ -42,5 +42,3 @@ def setupschema(sheet):
     wkst.update_title('SheetSQL')
     wkst.update_acell('A1', 'This worksheet holds all major settings for the DB. No Touching!')
     wkst.update_acell('A2', 'Spreadsheet ID: {}'.format(sheet.id)) #Writes ID to CELL A2
-
-    

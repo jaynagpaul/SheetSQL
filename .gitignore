@@ -95,3 +95,6 @@ virtual/
 # Credentials used for testing
 creds.json 
 _test.py
+
+#pylint
+.pylintrc

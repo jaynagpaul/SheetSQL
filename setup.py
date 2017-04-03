@@ -8,7 +8,8 @@ setup(
     author_email="spieswithin@gmail.com",
     url="https://github.com/SpiesWithin/SheetSQL",
     packages=["sheetsql"],
-    install_requires=["gspread", "oauth2client"],
+    install_requires=["gspread", "oauth2client", "sqlparse"],
     setup_requires=["pytest-runner"],
-    tests_require=["pytest"]
+    tests_require=["pytest"],
+    license="MIT"
 )
